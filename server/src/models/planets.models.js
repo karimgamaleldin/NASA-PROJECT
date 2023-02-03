@@ -32,8 +32,10 @@ function loadPlanetsData(){
         resolve(); //no need of input as pot data in the array
     });
 }
-
+function getAllPlanets(){
+    return habitablePlanets;
+}
 module.exports = {
     loadPlanetsData,
-    planets: habitablePlanets
+    getAllPlanets
 };
