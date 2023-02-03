@@ -1,6 +1,9 @@
+const path = require('path');
 const express = require("express");
-const planetsRouter = require('./routes/planets/planets.router');
 const cors = require('cors');
+
+
+const planetsRouter = require('./routes/planets/planets.router');
 
 const whitelist = {
     origin: 'http://localhost:3000'
@@ -8,6 +11,10 @@ const whitelist = {
 const app = express();
 app.use(cors(whitelist)); // if left emtpy it will accept all
 app.use(express.json());
+app.use(express.static(path.join(__dirname , '..' , 'public'))); //a middleware that serves all our public files
 app.use(planetsRouter);
+app.get('/',(req,res) => {
+    res.sendFile(path.join(__dirname , '..' , 'public' , 'index.html' ))
+})
 
 module.exports = app;
