@@ -16,8 +16,8 @@ app.use(cors(whitelist)); // if left emtpy it will accept all
 app.use(morgan('combined'));
 app.use(express.json());
 app.use(express.static(path.join(__dirname , '..' , 'public'))); //a middleware that serves all our public files
-app.use(planetsRouter);
-app.use(launchesrouter);
+app.use('/planets',planetsRouter);
+app.use('/launches', launchesrouter);
 app.get('/*',(req,res) => {
     res.sendFile(path.join(__dirname , '..' , 'public' , 'index.html' ))
 })
