@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/karimgamaleldin/NASA-PROJECT/issues"
   },
-  "homepage": "https://github.com/karimgamaleldin/NASA-PROJECT#readme"
+  "homepage": "https://github.com/karimgamaleldin/NASA-PROJECT#readme",
+  "dependencies": {
+    "mongoose": "^6.9.1"
+  }
 }
