@@ -9,17 +9,18 @@
     "test": "jest --detectOpenHandles",
     "start": "node src/server.js",
     "cluster": "pm2 start src/server.js -i max",
-    "delete" : "pm2 delete all"
+    "delete": "pm2 delete all"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "jest": {
-    "testEnvironment" : "node"
+    "testEnvironment": "node"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "csv-parse": "^5.3.4",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "morgan": "^1.10.0",
     "pm2": "^5.2.2"
