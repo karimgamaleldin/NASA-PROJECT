@@ -5,6 +5,7 @@ const app = require('./app');
 const {mongoConnect} = require("../src/services/mongo");
 const cluster = require('cluster');
 const {loadPlanetsData} = require('./models/planets.model');
+const {loadLaunchData} = require('./models/launches.model');
 
 const PORT = process.env.PORT || 8000;
 
@@ -21,6 +22,7 @@ async function startServer(){
     // } // no longer needed in new vwesion of mongoose
     await mongoConnect();
     await loadPlanetsData();
+    await loadLaunchData();
     server.listen(PORT , ()=> {
 
     }) 

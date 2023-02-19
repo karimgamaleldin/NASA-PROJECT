@@ -1,4 +1,3 @@
-
 const axios = require('axios');
 
 const launchesDatabase = require('./launches.mongo');
@@ -10,6 +9,7 @@ const SPACEX_API_URL = 'https://api.spacexdata.com/v4/launches/query';
 
 async function populateLaunches() {
   console.log('Downloading launch data...');
+  // the next line is a very costly api so we should enhance it , so we could check if the first entry is in the database instead of the data everytime
   const response = await axios.post(SPACEX_API_URL, {
     query: {},
     options: {
